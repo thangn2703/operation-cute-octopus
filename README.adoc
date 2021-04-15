@@ -1,2 +1,41 @@
 = Operation Cute Octopus
 The Deep Depth
+
+A mobile game centered around an octopus navigating through a 2D, endless cave system where he is trying to dodge obstacles and other creatures that are in there with the help of his agile swimming and ink shooting abilities.
+All while collecting beautiful starfish along the way.
+
+
+== What is this?
+A game made in unity 2020.3.0f1 as a school project for MAPP 2021.
+
+
+== Setup
+. Clone This repository:
+* `git clone https://github.com/Aiz0/operation-cute-octopus`
+
+. Open UnityHub and add the 'src' directory as a project.
+
+. Open this project with unity.
+
+
+== Contribute
+=== As a Collaborator
+create and checkout a new branch for your feature:
+
+`git checkout -b {featureName}`
+
+replacing `{featureName}` with the name of your feature.
+
+Save and commit your changes.
+
+Push to a new branch upstream
+
+`git push --set-upstream origin {featureName}`
+again replacing `{featureName}` with the name of your feature.
+
+open a pull request to merge it with the `main` branch.
+
+This is so we can review each others changes and prevent merge conflicts.
+
+=== If You Aren't a Collaborator
+If you somehow found this and want to contribute, Please don't as this is a School project
