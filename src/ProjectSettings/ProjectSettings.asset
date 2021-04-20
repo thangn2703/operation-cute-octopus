@@ -146,6 +146,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.TheDeepDepth.OperationCuteOctopus
     Standalone: com.TheDeepDepth.Operation-Cute-Octopus
   buildNumber:
     Standalone: 0
