@@ -8,18 +8,19 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody2D rigid;
     float xDirection;
-    float movementSpeed = 20f;
-    // Start is called before the first frame update
+    public float movementSpeed = 20f;
+
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         xDirection = Input.acceleration.x * movementSpeed;
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -7f, 7f), transform.position.y);
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -2.5f, 2.5f), transform.position.y);
     }
 
     void FixedUpdate()
