@@ -5,27 +5,30 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 
-    public GameObject[] obstaclePatterns;
+    [SerializeField]
+    private GameObject[] patterns;
 
-    public Player player;
+    [SerializeField]
+    private float interval;
 
-    private float timeBtwSpawn;
-    public float startTimeBtwSpawn;
-    public float decreaseTime;
-    public float minTime;
+    void Start() {
+        StartCoroutine(SpawnLoop());
+    }
 
-    private void Update()
-    {
-        if (timeBtwSpawn <= 0 && player.health > 0)
-        {
-            int rand = Random.Range(0, obstaclePatterns.Length);
-            Instantiate(obstaclePatterns[rand], transform.position, Quaternion.identity);
-            timeBtwSpawn = startTimeBtwSpawn;
-            if( startTimeBtwSpawn > minTime) startTimeBtwSpawn -= decreaseTime;
+    private IEnumerator SpawnLoop() {
+        while(true) {
+            yield return new WaitForSeconds(interval);
+            GameObject pattern = GetRandomPattern();
+            SpawnObstacles(pattern);
         }
-        else
-        {
-            timeBtwSpawn -= Time.deltaTime;
-        }
+    }
+
+    private GameObject GetRandomPattern() {
+        int rand = Random.Range(0, patterns.Length);
+        return patterns[rand];
+    }
+
+    private void SpawnObstacles(GameObject pattern) {
+        Instantiate(pattern, transform.position, Quaternion.identity);
     }
 }
