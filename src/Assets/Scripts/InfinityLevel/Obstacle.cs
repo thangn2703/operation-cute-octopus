@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public int damage = 1;
-    public float speed;
+    [SerializeField]
+    private int damage = 1;
+    [SerializeField]
+    private GameObject effect;
 
-    public GameObject effect;
+    private Vector2 direction;
+    private float speed;
 
-    private void Update()
-    {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+    void Start() {
+        direction = GameController.gameControllerInstance.GetDirection();
+        speed = GameController.gameControllerInstance.GetSpeed();
+    }
+
+
+    private void Update(){
+            transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

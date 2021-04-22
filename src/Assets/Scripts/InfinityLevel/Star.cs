@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
-    public int give = 1;
-    public float speed;
-
+    private int value = 1;
+    private float speed;
+    private Vector2 direction;
     //public GameObject effect;
 
-    private void Update()
-    {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+    void Start() {
+        direction = GameController.gameControllerInstance.GetDirection();
+        speed = GameController.gameControllerInstance.GetSpeed();
+    }
+
+    private void Update() {
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,8 +23,7 @@ public class Star : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Instantiate(effect, transform.position, Quaternion.identity);
-            collision.GetComponent<Player>().starCollection += give;
-            Debug.Log(collision.GetComponent<Player>().starCollection);
+            GameController.gameControllerInstance.IncrementStars(value);
             Destroy(gameObject);
         }
     }
