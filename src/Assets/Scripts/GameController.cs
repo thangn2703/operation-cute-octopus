@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour
     private float speed = 1;
 
     [SerializeField]
+    private float scoreInterval;
+
+    [SerializeField]
     private Text scoreText;
     [SerializeField]
     private Text starText;
@@ -38,6 +41,19 @@ public class GameController : MonoBehaviour
     private void StartGame() {
         gameRunning = true;
         gameOverPanel.SetActive(false);
+
+        SetScore(0);
+        SetStars(0);
+
+        StartCoroutine(ScoreLoop());
+    }
+
+    private IEnumerator ScoreLoop() {
+        // Could alternatly use time.deltaTime instead
+        while(IsRunning()) {
+            yield return new WaitForSeconds(scoreInterval);
+            IncrementScore(1);
+        }
     }
 
 

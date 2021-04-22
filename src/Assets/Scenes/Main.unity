@@ -1160,6 +1160,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1122851469}
   direction: {x: 0, y: -1}
   speed: 2
+  scoreInterval: 2
   scoreText: {fileID: 689410202}
   starText: {fileID: 375852848}
 --- !u!1 &1837462852
