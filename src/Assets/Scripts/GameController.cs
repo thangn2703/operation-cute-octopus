@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class GameController : MonoBehaviour
     public static GameController gameControllerInstance;
 
 
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private GameObject gameOverPanel;
     [SerializeField]
     private Vector2 direction = Vector2.down;
     [SerializeField]
@@ -23,8 +28,16 @@ public class GameController : MonoBehaviour
     private int stars;
     private int health = 1;
 
+    private bool gameRunning = false;
+
     void Awake(){
         gameControllerInstance = this;
+        StartGame();
+    }
+
+    private void StartGame() {
+        gameRunning = true;
+        gameOverPanel.SetActive(false);
     }
 
 
@@ -65,7 +78,19 @@ public class GameController : MonoBehaviour
         SetHealth(health - value);
     }
 
+    public bool IsRunning() {
+        return gameRunning;
+    }
+
     private void EndGame() {
         Debug.Log("Game Over!");
+        gameRunning = false;
+        gameOverPanel.SetActive(true);
+        Destroy(player);
+    }
+
+    public void Restart() {
+        Debug.Log("Restarting Game!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
