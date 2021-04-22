@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799031926943410718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2833312379306237617}
@@ -46,8 +46,6 @@ MonoBehaviour:
   obstacle: {fileID: 8763436113361802842, guid: 6c45c9343397744e09140a1e4a00f222, type: 3}
   enemy: {fileID: 4104930677290746198, guid: f62ee2ca291aa4fdabb9e2a77429c538, type: 3}
   star: {fileID: 4532749128122259383, guid: efab937f8e9c647009687d15d44c06c2, type: 3}
-  probabilityToSpawnStar: 10
-  probabilityToSpawnEnemy: 50
 --- !u!1 &2407490530248125066
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +71,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2407490530248125066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2833312379306237617}
@@ -94,8 +92,6 @@ MonoBehaviour:
   obstacle: {fileID: 8763436113361802842, guid: 6c45c9343397744e09140a1e4a00f222, type: 3}
   enemy: {fileID: 4104930677290746198, guid: f62ee2ca291aa4fdabb9e2a77429c538, type: 3}
   star: {fileID: 4532749128122259383, guid: efab937f8e9c647009687d15d44c06c2, type: 3}
-  probabilityToSpawnStar: 10
-  probabilityToSpawnEnemy: 50
 --- !u!1 &4376034925928622568
 GameObject:
   m_ObjectHideFlags: 0

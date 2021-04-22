@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstavlePattern03 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8074060651918055745, guid: 1d18f38590ed147e7b99b839289963e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8493140727159423122, guid: 1d18f38590ed147e7b99b839289963e0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -61,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8893990735385536109, guid: 1d18f38590ed147e7b99b839289963e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d18f38590ed147e7b99b839289963e0, type: 3}
