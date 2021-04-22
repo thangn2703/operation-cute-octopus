@@ -27,8 +27,7 @@ public class Obstacle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Instantiate(effect, transform.position, Quaternion.identity);
-            collision.GetComponent<Player>().health -= damage;
-            Debug.Log(collision.GetComponent<Player>().health);
+            GameController.gameControllerInstance.DecrementHealth(damage);
             Destroy(gameObject);
         }
     }

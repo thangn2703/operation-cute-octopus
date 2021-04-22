@@ -53,4 +53,19 @@ public class GameController : MonoBehaviour
     public void IncrementStars(int value) {
         SetStars(stars + value);
     }
+
+    private void SetHealth(int value) {
+        health = value;
+        if(health <= 0) {
+            EndGame();
+        }
+    }
+
+    public void DecrementHealth(int value) {
+        SetHealth(health - value);
+    }
+
+    private void EndGame() {
+        Debug.Log("Game Over!");
+    }
 }

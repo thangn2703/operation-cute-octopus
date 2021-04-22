@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int damage = 2;
+    [SerializeField]
+    private int damage = 1;
     public float speedForward;
     public float speedVertical;
 
     public float maxHeight;
     public float minHeight;
 
-    public GameObject effect;
+    [SerializeField]
+    private GameObject effect;
 
     private void Start()
     {
@@ -33,8 +35,7 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Instantiate(effect, transform.position, Quaternion.identity);
-            collision.GetComponent<Player>().health -= damage;
-            Debug.Log(collision.GetComponent<Player>().health);
+            GameController.gameControllerInstance.DecrementHealth(damage);
             //Destroy(gameObject);
         }
     }
