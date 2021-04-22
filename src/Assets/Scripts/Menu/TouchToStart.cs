@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class TouchToStart : MonoBehaviour
 {
+    [SerializeField]
+    private string sceneToLoad;
+
     void OnTouch(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
