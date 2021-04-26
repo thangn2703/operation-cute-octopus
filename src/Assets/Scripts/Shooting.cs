@@ -9,6 +9,8 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public Transform firePoint;
     public float bulletSpeed = 50;
+    public int reloadTime = 5;
+    private bool isReloading = false;
 
     Vector3 lookDirection;
     float lookAngle;
@@ -30,6 +32,17 @@ public class Shooting : MonoBehaviour
         lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
         firePoint.eulerAngles = new Vector3(0, 0, lookAngle);
+
+        if (isReloading)
+        {
+            return;
+        }
+
+        if (currentInk <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
 
         if (Input.GetMouseButtonDown(0) && currentInk > 0)
         {
@@ -55,5 +68,14 @@ public class Shooting : MonoBehaviour
             currentInk = maxInk;
         }
         inkText.text = currentInk.ToString();
+    }
+
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(reloadTime);
+        currentInk = maxInk;
+        inkText.text = currentInk.ToString();
+        isReloading = false;
     }
 }

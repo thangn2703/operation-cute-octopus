@@ -317,6 +317,7 @@ MonoBehaviour:
   bullet: {fileID: 9126122432969393655, guid: 57c6a119fc5e5744bb5cdcb5c6ddde0b, type: 3}
   firePoint: {fileID: 1213619348}
   bulletSpeed: 50
+  reloadTime: 5
   maxInk: 3
   currentInk: 3
   inkText: {fileID: 1133920712}
