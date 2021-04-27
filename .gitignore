@@ -72,3 +72,6 @@ crashlytics-build.properties
 
 # Readme
 /README.html
+
+#vsconfig
+.vsconfig
